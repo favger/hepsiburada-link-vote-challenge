@@ -1,0 +1,47 @@
+// Container
+.container {
+	position: relative;
+	height: inherit;
+	min-height: inherit;
+	max-width: map-get($container-max-widths, lg);
+	margin: 0 auto;
+
+	@include breakpoint-max('xl', +80) {
+		padding: 0 $container-spacing;
+	}
+
+	@include breakpoint-max('sm') {
+		padding: 0 $container-spacing - 15px;
+	}
+
+	// sizes
+	@each $name, $width in $container-max-widths {
+		&_#{$name} {
+			width: $width;
+			max-width: $width;
+		}
+	}
+}
+
+// Container Fluid
+.container-fluid {
+	position: relative;
+	height: 100%;
+	width: auto;
+	min-height: inherit;
+	padding: 0 $container-spacing;
+	z-index: 3;
+
+	@include breakpoint-max('sm') {
+		padding: 0 $container-spacing - 10px;
+	}
+}
+
+// Container Full
+.container-full {
+	position: relative;
+	height: 100%;
+	width: auto;
+	min-height: inherit;
+	z-index: 3;
+}

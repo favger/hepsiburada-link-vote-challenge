@@ -1,0 +1,5 @@
+.main {
+	@at-root .header + & {
+		margin-top: 30px;
+	}
+}

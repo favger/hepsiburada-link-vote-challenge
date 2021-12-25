@@ -1,0 +1,36 @@
+.pagination {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: -3px 0;
+
+	// Item
+	&__item {
+		@include button-reset();
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 34px;
+		height: 34px;
+		font-size: 20px;
+		margin: 3px;
+		font-weight: bold;
+		border: 1px solid transparent;
+		transition: all 0.25s ease-in-out;
+
+		&[disabled] {
+			cursor: default;
+		}
+
+		// Modifier: active
+		&_icon {
+			margin: 3px 20px;
+		}
+
+		// Modifier: active & :hover
+		&:not([disabled]):hover,
+		&_active:not([disabled]):not(&_icon) {
+			border-color: $primary;
+		}
+	}
+}

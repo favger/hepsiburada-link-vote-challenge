@@ -1,0 +1,28 @@
+.toolbar {
+	display: flex;
+	width: 100%;
+	margin-bottom: 50px;
+
+	// button
+	&__button {
+		@include button-reset();
+		font-weight: 500;
+		font-size: $font-size-lg;
+
+		// Icon
+		i {
+			position: relative;
+			left: 0;
+			margin-right: 10px;
+			font-size: 18px;
+			transition: left 0.25s ease-in-out;
+		}
+
+		// :Hover
+		&:hover {
+			i {
+				left: -5px;
+			}
+		}
+	}
+}

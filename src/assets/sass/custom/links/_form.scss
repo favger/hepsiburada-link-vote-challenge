@@ -1,0 +1,39 @@
+.links__form {
+	display: block;
+	padding: 50px 0;
+
+	// Field
+	&__field {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+
+		& + .links__form__field {
+			margin-top: 30px;
+		}
+
+		// Label
+		label {
+			display: block;
+			font-size: 16px;
+			margin-bottom: 5px;
+			font-weight: 500;
+		}
+
+		// Input
+		input {
+			width: 100%;
+			height: 50px;
+			border: 1px solid #a0a0a0;
+			padding: 6px 12px;
+			border-radius: 5px;
+			@include placeholder(#dadada);
+		}
+	}
+
+	// Button
+	&__button {
+		margin-top: 30px;
+		margin-left: auto;
+	}
+}

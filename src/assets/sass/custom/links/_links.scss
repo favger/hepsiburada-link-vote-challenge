@@ -1,0 +1,222 @@
+.links {
+	// List
+	&__list {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		margin: 20px -10px -10px -10px;
+		padding-bottom: 40px;
+
+		// Item
+		&__item {
+			position: relative;
+			display: flex;
+			background-color: transparent;
+			padding: 10px;
+			border: 1px solid transparent;
+			border-radius: 5px;
+			width: 100%;
+
+			& + .links__list__item {
+				margin-top: 20px;
+			}
+
+			// Points
+			&__points {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				width: 100px;
+				height: 100px;
+				border-radius: 5px;
+				border: 1px solid #b5b5b5;
+				background-color: #ececec;
+				font-weight: 500;
+				overflow: hidden;
+
+				// Strong
+				&__strong {
+					font-size: 40px;
+					max-width: 100%;
+					font-weight: bold;
+					line-height: 1;
+					padding: 0 5px;
+					margin-bottom: 2px;
+
+					// Modifier: fs-md
+					&_fs-md {
+						font-size: 30px;
+					}
+
+					// Modifier: fs-sm
+					&_fs-sm {
+						font-size: 24px;
+					}
+				}
+			}
+
+			// Body
+			&__body {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				margin-left: 20px;
+
+				// Title
+				&__title {
+					font-size: 24px;
+					font-weight: 500;
+				}
+
+				// Link
+				&__link {
+					color: #7e7e7e;
+					font-size: 16px;
+
+					&:not(:first-child) {
+						margin-top: 2px;
+					}
+
+					// :hover
+					&:hover {
+						color: $primary;
+					}
+				}
+
+				// Vote
+				&__vote {
+					margin-top: auto;
+					display: flex;
+					flex-wrap: wrap;
+
+					// Item
+					&__item {
+						display: flex;
+						align-items: center;
+						@include button-reset();
+						color: #6b6b6b;
+						font-weight: 500;
+						font-size: 14px;
+						cursor: pointer;
+						transition: all 0.25s ease-in-out;
+
+						&:not(:first-child) {
+							margin-left: 60px;
+						}
+
+						// Icon
+						i {
+							margin-right: 5px;
+							font-size: 16px;
+						}
+
+						// :hover
+						&:hover {
+							color: $primary;
+						}
+					}
+				}
+			}
+
+			// Overlay
+			&__overlay {
+				position: absolute;
+				top: -15px;
+				right: -15px;
+				display: flex;
+				flex-wrap: wrap;
+				transition: opacity 0.15s ease-in-out,
+					visibility 0.15s ease-in-out;
+
+				@include breakpoint-min('sm') {
+					opacity: 0;
+					visibility: hidden;
+					pointer-events: none;
+				}
+
+				@include breakpoint-max('sm') {
+					right: 15px;
+				}
+
+				// Button
+				&__button {
+					@include button-reset();
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					height: 30px;
+					width: 30px;
+					border-radius: 50%;
+					background-color: #ececec;
+					border: 1px solid #e9e9e9;
+					transition: all 0.25s ease-in-out;
+
+					margin-left: 5px;
+
+					// Icon
+					i {
+						font-size: 12px;
+					}
+
+					// :hover
+					&:hover {
+						background-color: darken(#ececec, 5%);
+					}
+
+					// Modifier: edit
+					&_edit {
+					}
+
+					// Modifier: trash
+					&_trash {
+						background-color: $danger;
+						border-color: $danger;
+						color: $white;
+
+						// :hover
+						&:hover {
+							background-color: darken($danger, 20%);
+						}
+					}
+				}
+
+				// :hover
+				@at-root .links__list__item:hover & {
+					@include breakpoint-min('sm') {
+						opacity: 1;
+						visibility: visible;
+						pointer-events: auto;
+					}
+				}
+			}
+
+			// :hover
+			&:hover {
+				background-color: #f7f7f7;
+				border-color: #e9e9e9;
+			}
+
+			@include breakpoint-max('sm') {
+				background-color: #f7f7f7;
+				border-color: #e9e9e9;
+			}
+		}
+	}
+
+	// Description
+	&__description {
+		padding: 30px 0;
+		font-size: 18px;
+
+		button {
+			@include button-reset();
+		}
+	}
+
+	// Pagination
+	&__pagination {
+		padding: 20px 0 50px;
+	}
+}

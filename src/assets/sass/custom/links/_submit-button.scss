@@ -1,0 +1,51 @@
+$submit-link-button-border-color: #e9e9e9;
+$submit-link-button-icon-border-color: #979797;
+$submit-link-button-icon-bg-color: #ececec;
+
+.links__submit-button {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	background-color: $secondary;
+	border: 1px solid $submit-link-button-border-color;
+	border-radius: 5px;
+	padding: 10px;
+	min-height: 120px;
+	transition: all 0.25s ease-in-out;
+	cursor: pointer;
+
+	// icon
+	i {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100px;
+		height: 100px;
+		border: 1px solid $submit-link-button-icon-border-color;
+		background-color: $submit-link-button-icon-bg-color;
+		font-size: 40px;
+		border-radius: 5px;
+		transition: all 0.25s ease-in-out;
+	}
+
+	// text
+	span {
+		flex: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: $h1-font-size;
+		font-weight: 500;
+		margin: 0 30px;
+	}
+
+	// :hover
+	&:hover {
+		background-color: $submit-link-button-icon-bg-color;
+
+		// Icon
+		i {
+			background-color: $secondary;
+		}
+	}
+}

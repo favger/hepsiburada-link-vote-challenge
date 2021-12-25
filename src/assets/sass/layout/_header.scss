@@ -1,0 +1,51 @@
+.header {
+	display: flex;
+	width: 100%;
+
+	// Container
+	& > .container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 25px;
+		padding-bottom: 25px;
+		border-bottom: 1px solid #979797;
+	}
+
+	// Logo
+	&__logo {
+		filter: grayscale(1);
+		transition: all 0.25s ease-in-out;
+
+		@include breakpoint-min('sm') {
+			margin-right: 30px;
+		}
+
+		// Img
+		img {
+			max-width: 400px;
+		}
+
+		// :hover
+		&:hover {
+			filter: grayscale(0);
+		}
+	}
+
+	// Title
+	&__title {
+		font-size: $h1-font-size;
+		font-weight: 400;
+
+		// modifier: bold
+		&_bold {
+			font-weight: 600;
+		}
+
+		// modifier: light
+		&_light {
+			font-weight: 300;
+		}
+	}
+}

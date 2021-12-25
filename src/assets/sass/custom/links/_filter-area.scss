@@ -1,0 +1,50 @@
+.links__filter-area {
+	// select
+	&__select {
+		position: relative;
+		display: inline-flex;
+
+		// Input
+		&__input {
+			@include input-reset();
+			padding: 9px 30px 9px 13px;
+			min-width: 220px;
+			border: 1px solid #d8d3d3;
+			border-radius: 3px;
+			background-color: #f2f2f2;
+			-moz-appearance: none; /* Firefox */
+			-webkit-appearance: none; /* Safari and Chrome */
+			appearance: none;
+		}
+
+		// Arrow
+		&__arrow {
+			position: absolute;
+			top: 0;
+			right: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+			width: 32px;
+			border-left: 1px solid #d7d2d2;
+			font-size: 18px;
+			pointer-events: none;
+
+			&:before {
+				content: '';
+				display: block;
+				border: 8px solid transparent;
+				margin-bottom: -8px;
+				border-top-color: $primary;
+
+				@at-root .links__filter-area__select__input:focus ~ & {
+					border: 8px solid transparent;
+					border-bottom-color: $primary;
+					margin-bottom: 0;
+					margin-top: -8px;
+				}
+			}
+		}
+	}
+}

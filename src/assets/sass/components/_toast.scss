@@ -1,0 +1,48 @@
+.toast {
+	position: fixed;
+	top: 70px;
+	left: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transform: translate(-50%, -20px);
+	background-color: lighten($primary, 10%);
+	border: 1px solid $primary;
+	padding: 5px 40px;
+	min-height: 54px;
+	border-radius: 5px;
+	min-width: 300px;
+	color: $white;
+	font-size: 18px;
+	box-shadow: 0 0 12px 2px rgba(black, 0.25);
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.4s ease-in-out;
+
+	// b & strong
+	b,
+	strong {
+		font-size: 22px;
+	}
+
+	// Modifier: start animation
+	&_start-animation {
+		transform: translate(-50%, 0);
+		opacity: 1;
+		visibility: visible;
+	}
+
+	// Modifier: success
+	&_success {
+		background-color: #ddf9d3;
+		border-color: #47a62d;
+		color: #47a62d;
+	}
+
+	// Modifier: danger
+	&_danger {
+		background-color: #ffacac;
+		border-color: #e30606;
+		color: #e30606;
+	}
+}
